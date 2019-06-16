@@ -27,6 +27,11 @@
       shade: function(color, weight) {
         return mix('#000000', color, weight);
       },
+    })
+    .constant('serverConfig', {
+      server: {
+        address: 'http://localhost:8080'
+      }
     });
 
   function shade(color, weight) {
