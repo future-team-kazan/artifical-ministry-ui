@@ -5,7 +5,7 @@
     .controller('DashboardInspectionResultsCtrl', DashboardInspectionResultsCtrl);
 
   /** @ngInject */
-  function DashboardInspectionResultsCtrl($scope, $filter, editableOptions, editableThemes) {
+  function DashboardInspectionResultsCtrl($scope, $filter, editableOptions, editableThemes, $http) {
 
     $scope.metricsTableData = [
       {
@@ -58,7 +58,9 @@
         percent: '5%',
         isPercentUp: false
       }
-    ];
+    ]
+
+
 
   }
 
