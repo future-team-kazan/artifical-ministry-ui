@@ -8,6 +8,7 @@
   function dashboardInspectionResults() {
     return {
       restrict: 'E',
+      title: '@',
       controller: 'DashboardInspectionResultsCtrl',
       templateUrl: 'app/pages/dashboard/dashboardInspectionResults/dashboardInspectionResults.html'
     };
