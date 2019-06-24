@@ -13,8 +13,8 @@
           title: 'Проекты',
           controller: 'ProjectListCtrl',
           sidebarMeta: {
-            icon: 'ion-android-home',
-            order: 30,
+            icon: 'ion-android-attach',
+            order: 50,
           },
         });
   }

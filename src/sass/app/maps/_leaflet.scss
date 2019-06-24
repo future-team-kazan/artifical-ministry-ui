@@ -237,7 +237,7 @@
 .leaflet-bar {
   box-shadow: 0 1px 5px rgba(0, 0, 0, 0.65);
   a {
-    background-color: $primary-dark;
+    background-color: $default;
     border-bottom: 1px solid #ccc;
     display: block;
     text-align: center;
@@ -251,7 +251,7 @@
     font-family: Lato;
     font-weight: $font-thin;
     &:hover {
-      background-color: $danger;
+      background-color: $success-light;
     }
     &:last-child {
       border-bottom: none;

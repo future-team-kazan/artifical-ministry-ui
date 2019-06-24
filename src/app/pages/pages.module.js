@@ -9,12 +9,17 @@
     'ui.router',
 
     'BlurAdmin.pages.dashboard',
+    'BlurAdmin.pages.calendar',
     'BlurAdmin.pages.documents',
+    'BlurAdmin.pages.edicts',
     'BlurAdmin.pages.schools',
     'BlurAdmin.pages.projects',
     'BlurAdmin.pages.map',
+    'BlurAdmin.pages.messages',
     'BlurAdmin.pages.statistics',
     'BlurAdmin.pages.finances',
+    'BlurAdmin.pages.verifications',
+    'BlurAdmin.pages.notifications'
     // 'BlurAdmin.pages.ui',
     // 'BlurAdmin.pages.components',
     // 'BlurAdmin.pages.form',

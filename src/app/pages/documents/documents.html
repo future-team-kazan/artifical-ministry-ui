@@ -1,19 +1,28 @@
-<p>Документы</p>
-<div class="col-lg-12">
-    <div ba-panel ba-panel-class="with-scroll">
-        <table class="table table-condensed">
+<!--<div class="col-md-12">-->
+    <div ba-panel ba-panel-title="Образовательные учреждения" ba-panel-class="with-scroll">
+        <table class="table table-bordered">
             <thead>
             <tr>
-                <th>Документ</th>
-                <th>Статус</th>
+                <th class="hidden"></th>
+                <th class="align-left">Тип</th>
+                <th class="align-left">Краткое описание</th>
+                <th class="align-left">Ответственное лицо</th>
+                <th class="align-right">Резолюция</th>
+                <th class="align-right">Дата исполнения</th>
+                <th class="align-right">Статус</th>
             </tr>
             </thead>
             <tbody>
             <tr ng-repeat="item in documents">
-                <td>{{item.name}}</td>
-                <td><button class="btn btn-xs btn-{{item.statusColor}}">{{item.status}}</button></td>
+                <td class="hidden"></td>
+                <td class="align-left">{{item.type}}</td>
+                <td class="align-left">{{item.shortDesc}}</td>
+                <td class="align-left">{{item.person}}</td>
+                <td class="align-right">{{item.resolution}}</td>
+                <td class="align-right">{{item.deadline}}</td>
+                <td class="align-right">{{item.status}}</td>
             </tr>
             </tbody>
         </table>
     </div>
-</div>
+<!--</div>-->

@@ -1,0 +1,24 @@
+<div class="col-md-12">
+    <div ba-panel ba-panel-title="Образовательные учреждения" ba-panel-class="with-scroll">
+        <table class="table table-bordered">
+            <thead>
+            <tr>
+                <th class="hidden"></th>
+                <th class="align-left">Наименование</th>
+                <th class="align-left">Ответственное лицо</th>
+                <th class="align-right">Дата исполнения</th>
+                <th class="align-right">Исполнен на %</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr ng-repeat="item in edictList">
+                <td class="hidden"></td>
+                <td class="align-left">{{item.name}}</td>
+                <td class="align-left">{{item.person}}</td>
+                <td class="align-right">{{item.executionDate}}</td>
+                <td class="align-right">{{item.percent}}%</td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

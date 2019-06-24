@@ -13,7 +13,7 @@
           title: 'Проверки',
           sidebarMeta: {
             icon: 'ion-clipboard',
-            order: 70,
+            order: 100,
           },
         });
   }

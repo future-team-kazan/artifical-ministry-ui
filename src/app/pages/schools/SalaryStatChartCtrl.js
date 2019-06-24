@@ -9,6 +9,88 @@
     var layoutColors = baConfig.colors;
     var id = $element[0].getAttribute('id');
 
+    var arrayINeed = {
+      legend: [
+        {
+          name: 'Все',
+          field: 'all'
+        },
+        {
+          name: 'Директор',
+          field: 'director'
+        },
+        {
+          name: 'Учительно',
+          field: 'teacher'
+        }
+      ],
+      chartData: [
+        {
+          year: 2018,
+          all: 15000,
+          director: 30000,
+          teacher: 14000,
+          color: layoutColors.info
+        },
+        {
+          year: 2019,
+          all: 25000,
+          director: 35000,
+          teacher: 20000,
+          color: layoutColors.success
+        }
+      ]
+    };
+
+    var legend = [
+      {
+        name: 'Все',
+        field: 'all'
+      },
+      {
+        name: 'Директор',
+        field: 'director'
+      },
+      {
+        name: 'Учительно',
+        field: 'teacher'
+      }
+    ];
+
+    var myGraphs = [];
+
+    legend.forEach(function (item, i) {
+      myGraphs.push({
+        id: 'g' + i,
+        balloonText: '<b>[[title]]: [[value]]</b>',
+        bullet: 'round',
+        bulletSize: 8,
+        lineColor: layoutColors.warning,
+        lineThickness: 2,
+        negativeLineColor: layoutColors.warning,
+        type: 'smoothedLine',
+        valueField: item.field,
+        title: item.name
+      })
+    }, myGraphs);
+
+    var testData = [
+      {
+        year: 2018,
+        all: 15000,
+        director: 30000,
+        teacher: 14000,
+        color: layoutColors.info
+      },
+      {
+        year: 2019,
+        all: 25000,
+        director: 35000,
+        teacher: 20000,
+        color: layoutColors.success
+      }
+    ];
+
     var chartData = [
       {
         year: 2015,
@@ -66,44 +148,45 @@
           gridColor: layoutColors.border,
         }
       ],
-      graphs: [
-        {
-          id: 'g1',
-          balloonText: '<b>[[title]]: [[value]]</b>',
-          bullet: 'round',
-          bulletSize: 8,
-          lineColor: layoutColors.warning,
-          lineThickness: 2,
-          negativeLineColor: layoutColors.warning,
-          type: 'smoothedLine',
-          valueField: 'all',
-          title: 'Все'
-        },
-        {
-          id: 'g2',
-          balloonText: '<b>[[title]]: [[value]]</b>',
-          bullet: 'round',
-          bulletSize: 8,
-          lineColor: layoutColors.primary,
-          lineThickness: 1,
-          negativeLineColor: layoutColors.primary,
-          type: 'smoothedLine',
-          valueField: 'director',
-          title: 'Директор'
-        },
-        {
-          id: 'g3',
-          balloonText: '<b>[[title]]: [[value]]</b>',
-          bullet: 'round',
-          bulletSize: 8,
-          lineColor: layoutColors.danger,
-          lineThickness: 1,
-          negativeLineColor: layoutColors.danger,
-          type: 'smoothedLine',
-          valueField: 'teacher',
-          title: 'Учитель'
-        }
-      ],
+      graphs: myGraphs,
+      //   [
+      //   {
+      //     id: 'g1',
+      //     balloonText: '<b>[[title]]: [[value]]</b>',
+      //     bullet: 'round',
+      //     bulletSize: 8,
+      //     lineColor: layoutColors.warning,
+      //     lineThickness: 2,
+      //     negativeLineColor: layoutColors.warning,
+      //     type: 'smoothedLine',
+      //     valueField: 'all',
+      //     title: 'Все'
+      //   },
+      //   {
+      //     id: 'g2',
+      //     balloonText: '<b>[[title]]: [[value]]</b>',
+      //     bullet: 'round',
+      //     bulletSize: 8,
+      //     lineColor: layoutColors.primary,
+      //     lineThickness: 1,
+      //     negativeLineColor: layoutColors.primary,
+      //     type: 'smoothedLine',
+      //     valueField: 'director',
+      //     title: 'Директор'
+      //   },
+      //   {
+      //     id: 'g3',
+      //     balloonText: '<b>[[title]]: [[value]]</b>',
+      //     bullet: 'round',
+      //     bulletSize: 8,
+      //     lineColor: layoutColors.danger,
+      //     lineThickness: 1,
+      //     negativeLineColor: layoutColors.danger,
+      //     type: 'smoothedLine',
+      //     valueField: 'teacher',
+      //     title: 'Учитель'
+      //   }
+      // ],
       chartCursor: {
         "cursorPosition": "mouse"
       },

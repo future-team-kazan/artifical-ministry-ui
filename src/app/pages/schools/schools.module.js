@@ -18,7 +18,7 @@
           controller: 'SchoolListCtrl',
           sidebarMeta: {
             icon: 'ion-android-contract',
-            order: 10,
+            order: 70,
           },
         })
       .state('school', { // Не отображается в меню

@@ -13,8 +13,8 @@
         title: 'Документы',
         controller: 'DocumentListCtrl',
         sidebarMeta: {
-          icon: 'ion-android-attach',
-          order: 20,
+          icon: 'ion-document',
+          order: 40,
         }
       })
       // .state('document', {

@@ -1,20 +1,20 @@
 (function () {
   'use strict';
 
-  angular.module('BlurAdmin.pages.messages', [])
+  angular.module('BlurAdmin.pages.notifications', [])
       .config(routeConfig);
 
   /** @ngInject */
   function routeConfig($stateProvider) {
     $stateProvider
-        .state('messages', {
-          url: '/messages',
+        .state('notifications', {
+          url: '/notifications',
           templateUrl: 'app/pages/messages/messages.html',
-          title: 'Сообщения',
+          title: 'Уедомления',
           controller: 'MessageListCtrl',
           sidebarMeta: {
-            icon: 'ion-android-mail',
-            order: 20,
+            icon: 'ion-clipboard',
+            order: 110,
           },
         });
   }

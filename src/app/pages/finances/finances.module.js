@@ -14,7 +14,7 @@
         controller: 'FinanceCtrl',
         sidebarMeta: {
           icon: 'ion-ios-calculator',
-          order: 60,
+          order: 90,
         },
       })
       .state('budget', { // Не отображается в меню

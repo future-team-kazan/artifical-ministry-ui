@@ -8,14 +8,28 @@
   function DocumentListCtrl($scope) {
     $scope.documents = [
       {
-        name: 'Документ 1',
-        status: 'На рассмотрении',
-        statusColor: 'info'
+        type: 'Служебная записка',
+        shortDesc: 'Служебная записка на предоставление оборудования',
+        resolution: 'одобрено',
+        person: 'Александров М. А.',
+        deadline: '5.07.2019',
+        status: 'На рассмотрении'
       },
       {
-        name: 'Документ 2',
-        status: 'На рассмотрении',
-        statusColor: 'primary'
+        type: 'Лист согласования',
+        shortDesc: 'Лист согласования бюджета',
+        resolution: 'не согласовано',
+        person: 'Матвеева И. Г.',
+        deadline: '3.07.2019',
+        status: 'На рассмотрении'
+      },
+      {
+        type: 'Распоряжение',
+        shortDesc: 'Распоряжение о чрезвучайном просишествии ',
+        resolution: 'подписано',
+        person: 'Куропатов И. Ф.',
+        deadline: '1.07.2019',
+        status: 'На рассмотрении'
       }
     ];
   }

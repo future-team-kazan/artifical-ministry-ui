@@ -18,7 +18,7 @@
           controller: 'StatisticsCtrl',
           sidebarMeta: {
             icon: 'ion-android-home',
-            order: 50,
+            order: 80,
           },
         });
   }

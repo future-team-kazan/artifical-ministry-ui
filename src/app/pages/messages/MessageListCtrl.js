@@ -21,7 +21,7 @@
         author: 'Apollon',
         surname: 'Linnie',
         header: 'Posted new message',
-        text: 'Haha lol',
+        text: 'Hello!',
         time: '11.11.2015',
         ago: '2 days ago',
         expanded: false,

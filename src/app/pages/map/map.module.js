@@ -15,9 +15,10 @@
           url: '/map',
           templateUrl: 'app/pages/map/map.html',
           title: 'Карта',
+          controller: 'MapPageCtrl',
           sidebarMeta: {
             icon: 'ion-ios-location-outline',
-            order: 40,
+            order: 60,
           },
         });
   }
