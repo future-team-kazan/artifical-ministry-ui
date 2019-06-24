@@ -1,20 +1,27 @@
 (function () {
   'use strict';
 
-  angular.module('BlurAdmin.pages.finances', [])
+  angular.module('BlurAdmin.pages.finances', ['BlurAdmin.pages.charts.morris'])
     .config(routeConfig);
 
   /** @ngInject */
   function routeConfig($stateProvider) {
     $stateProvider
-      .state('finances', {
+      .state('budgets', {
         url: '/finances',
         templateUrl: 'app/pages/finances/finances.html',
-        title: 'Финансы',
+        title: 'Бюджет',
+        controller: 'FinanceCtrl',
         sidebarMeta: {
-          icon: 'ion-android-attach',
+          icon: 'ion-ios-calculator',
           order: 60,
         },
+      })
+      .state('budget', { // Не отображается в меню
+        url: '/budget/:schoolId',
+        templateUrl: 'app/pages/finances/budget.html',
+        title: 'Бюджет учреждения',
+        controller: 'BudgetCtrl',
       });
   }
 

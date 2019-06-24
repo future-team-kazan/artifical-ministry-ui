@@ -1,0 +1,75 @@
+<!--<p>Страница школы с id={{schoolId}}</p>-->
+<div
+        ba-panel
+        ba-panel-class="with-scroll horizontal-tabs tabs-panel">
+
+    <uib-tabset class="justified" active="$tabSetStatus.activeTab">
+        <uib-tab heading="Показатели образовательного учреждения">
+            <div class="row">
+                <div class="col-md-12">
+                    <h2>Показатели</h2>
+                    <table class="table table-hover">
+                        <thead>
+                        <tr>
+                            <th class="hidden"></th>
+                            <th class="align-left">Наименование показателя</th>
+                            <th class="align-right">Значение</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <tr ng-repeat="item in metrics">
+                            <td class="hidden"></td>
+                            <td class="align-left">{{item.name}}</td>
+                            <td class="align-right">{{item.value}}</td>
+                        </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </uib-tab>
+        <uib-tab heading="Финансовые показатели">
+            <div class="col-md-6 col-sm-12">
+                <div ba-panel
+                     ba-panel-title="Доходы"
+                     ba-panel-class="row">
+                    <table class="table table-bordered">
+                        <thead>
+                        <tr>
+                            <th class="align-left">Статья</th>
+                            <th class="align-right">Сумма</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <tr ng-repeat="item in incomes">
+                            <td class="align-left">{{item.name}}</td>
+                            <td class="align-right">{{item.value}}</td>
+                        </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div ba-panel
+                     ba-panel-title="Расходы"
+                     ba-panel-class="row">
+                    <table class="table table-bordered">
+                        <thead>
+                        <tr>
+                            <th class="align-left">Статья</th>
+                            <th class="align-right">Сумма</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <tr ng-repeat="item in expenses">
+                            <td class="align-left">{{item.name}}</td>
+                            <td class="align-right">{{item.value}}</td>
+                        </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            <div class="col-md-6 col-sm-12">
+                <h2>Средняя заработная плата по должностям</h2>
+                <div id="salaryChart" class="iminister-chart" ng-controller="SalaryStatChartCtrl"></div>
+            </div>
+        </uib-tab>
+    </uib-tabset>
+</div>

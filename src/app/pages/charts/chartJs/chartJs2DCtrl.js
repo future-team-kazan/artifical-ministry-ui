@@ -10,12 +10,12 @@
 
   /** @ngInject */
   function chartJs2DCtrl($scope) {
-    $scope.labels =["May", "Jun", "Jul", "Aug", "Sep"];
+    $scope.labels =["2015", "2016", "2017", "2018", "2019"];
     $scope.data = [
       [65, 59, 90, 81, 56],
       [28, 48, 40, 19, 88]
     ];
-    $scope.series = ['Product A', 'Product B'];
+    $scope.series = ['Русский Язык', 'Математика'];
 
 
     $scope.changeData = function () {

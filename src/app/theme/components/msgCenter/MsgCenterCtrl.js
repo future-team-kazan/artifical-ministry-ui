@@ -12,28 +12,28 @@
   function MsgCenterCtrl($scope, $sce) {
     $scope.users = {
       0: {
-        name: 'Vlad',
+        name: 'Министерство образования',
       },
       1: {
-        name: 'Kostya',
+        name: 'Надзоная организация',
       },
       2: {
         name: 'Andrey',
       },
       3: {
-        name: 'Nasta',
+        name: 'Apollon',
       }
     };
 
     $scope.notifications = [
       {
         userId: 0,
-        template: '&name posted a new article.',
+        template: '&name опубликовало новое постановление о "Содействии цифровизации ...".',
         time: '1 min ago'
       },
       {
         userId: 1,
-        template: '&name changed his contact information.',
+        template: '&name сообщает: Результаты проверки МОУ школы №38 Требуют реагирования.',
         time: '2 hrs ago'
       },
       {

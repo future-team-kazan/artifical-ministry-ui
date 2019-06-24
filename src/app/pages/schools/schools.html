@@ -1,3 +1,30 @@
-<dashboard-inspection-results title="Образовательные учреждения"></dashboard-inspection-results>
-
-
+<div class="row">
+    <div class="col-md-12">
+        <div ba-panel ba-panel-title="Образовательные учреждения" ba-panel-class="with-scroll">
+            <div class="horizontal-scroll">
+                <table class="table table-hover">
+                    <thead>
+                        <tr>
+                            <th class="col-md-4" style="widtr: 25%">Организация</th>
+                            <th class="align-right col-md-1">Количество сотрудников</th>
+                            <th class="align-right col-md-2">Средняя з/п</th>
+                            <th class="align-right col-md-1">Количество учащихся</th>
+                            <th class="align-right col-md-2">ЕГЭ (мат / рус)</th>
+                            <th class="align-right col-md-2">Годовой бюджет</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                    <tr ng-repeat="item in schools">
+                        <td> <a ng-href="#/schools/{{item.id}}">{{item.name}}</a></td>
+                        <td class="align-right">{{item.employeesCount}}</td>
+                        <td class="align-right">{{item.salaryAverage}}</td>
+                        <td class="align-right">{{item.studentsCount}}</td>
+                        <td class="align-right">{{item.egeMathAverage}} / {{item.egeRusAverage}}</td>
+                        <td class="align-right">{{item.budgetYear}}</td>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>

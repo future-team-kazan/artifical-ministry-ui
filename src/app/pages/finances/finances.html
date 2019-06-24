@@ -1,1 +1,90 @@
-<p>finances</p>
+<div
+        ba-panel
+        ba-panel-class="with-scroll horizontal-tabs tabs-panel">
+
+    <uib-tabset class="justified" active="$tabSetStatus.activeTab">
+        <uib-tab heading="По отрасли">
+            <div class="row">
+                <!--                <div id="salaryChart"></div>-->
+                <div class="col-md-8">
+                    <h2>Средняя заработная плата по должностям</h2>
+                    <div id="salaryChart" class="iminister-chart" ng-controller="SalaryChartCtrl"></div>
+                </div>
+                <div class="col-md-4 col-sm-12">
+                    Сюда бы какую то еще полезную информацию вывести, чтобы заполнить экран. Какую??
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-12">
+                    <h2>Расходы по статьям</h2>
+                    <table class="table table-hover">
+                        <thead>
+                        <tr>
+                            <th>Код</th>
+                            <th class="align-left">Статья</th>
+                            <th class="align-right">Расходы</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <tr ng-repeat="item in ministryBudget">
+                            <td>{{item.code}}</td>
+                            <td class="align-left">{{item.name}}</td>
+                            <td class="align-right">{{item.expenses}}</td>
+                        </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </uib-tab>
+        <uib-tab heading="По учреждениям">
+            <div class="col-md-12">
+                <div ba-panel ba-panel-title="Образовательные учреждения" ba-panel-class="with-scroll">
+                    <div class="horizontal-scroll">
+                        <table class="table table-hover">
+                            <thead>
+                            <tr>
+                                <th class="col-md-4">Организация</th>
+                                <th class="align-right">Доходы</th>
+                                <th class="align-right">Расходы</th>
+                                <th class="align-right">Годовой бюджет</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            <tr ng-repeat="item in organizations">
+                                <td> <a ng-href="#/budget/{{item.id}}">{{item.name}}</a></td>
+                                <td class="align-right">{{item.income}}</td>
+                                <td class="align-right">{{item.expenses}}</td>
+                                <td class="align-right">{{item.budget}}</td>
+                            </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </uib-tab>
+    <!--    <uib-tab ng-init="$dropdownTabActive = 1" class="with-dropdown">-->
+    <!--        <uib-tab-heading uib-dropdown>-->
+    <!--            <a uib-dropdown-toggle ng-click="$event.stopPropagation()">-->
+    <!--                Dropdown tab <i class="caret"></i>-->
+    <!--            </a>-->
+    <!--            <ul class="dropdown-menu" uib-dropdown-menu>-->
+    <!--                <li><a ng-click="$dropdownTabActive = 1; $tabSetStatus.activeTab = 3">Tab 1</a></li>-->
+    <!--                <li><a ng-click="$dropdownTabActive = 2; $tabSetStatus.activeTab = 3">Tab 2</a></li>-->
+    <!--            </ul>-->
+    <!--        </uib-tab-heading>-->
+    <!--        <div ng-show="$dropdownTabActive == 1">-->
+    <!--            <p>-->
+    <!--                Success is ... knowing your purpose in life, growing to reach your maximum potential, and sowing seeds that-->
+    <!--                benefit others.-->
+    <!--            </p>-->
+
+    <!--            <p>Failure is the condiment that gives success its flavor.</p>-->
+    <!--        </div>-->
+    <!--        <div ng-show="$dropdownTabActive == 2">-->
+    <!--            <p class="text-center">-->
+    <!--                <button class="btn btn-danger">I'm just a dummy button</button>-->
+    <!--            </p>-->
+    <!--        </div>-->
+    <!--    </uib-tab>-->
+    </uib-tabset>
+</div>

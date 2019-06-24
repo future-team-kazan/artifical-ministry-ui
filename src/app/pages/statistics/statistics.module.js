@@ -15,6 +15,7 @@
           url: '/statistics',
           templateUrl: 'app/pages/statistics/statistics.html',
           title: 'Статистика',
+          controller: 'StatisticsCtrl',
           sidebarMeta: {
             icon: 'ion-android-home',
             order: 50,

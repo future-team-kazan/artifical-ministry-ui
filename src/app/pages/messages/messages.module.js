@@ -1,17 +1,17 @@
 (function () {
   'use strict';
 
-  angular.module('BlurAdmin.pages.projects', [])
+  angular.module('BlurAdmin.pages.messages', [])
       .config(routeConfig);
 
   /** @ngInject */
   function routeConfig($stateProvider) {
     $stateProvider
-        .state('projects', {
-          url: '/projects',
-          templateUrl: 'app/pages/projects/projects.html',
-          title: 'Проекты',
-          controller: 'ProjectListCtrl',
+        .state('messages', {
+          url: '/messages',
+          templateUrl: 'app/pages/messages/messages.html',
+          title: 'Сообщения',
+          controller: 'MessageListCtrl',
           sidebarMeta: {
             icon: 'ion-android-home',
             order: 30,

@@ -5,21 +5,29 @@
 (function () {
   'use strict';
 
-  angular.module('BlurAdmin.pages.schools', [])
+  angular.module('BlurAdmin.pages.schools', ['OrganizationsModule'])
       .config(routeConfig);
 
   /** @ngInject */
   function routeConfig($stateProvider) {
     $stateProvider
-        .state('schools', {
+        .state('schools', { // Отображается в меню
           url: '/schools',
           templateUrl: 'app/pages/schools/schools.html',
           title: 'Организации',
+          controller: 'SchoolListCtrl',
           sidebarMeta: {
-            icon: 'ion-android-home',
+            icon: 'ion-android-contract',
             order: 10,
           },
-        });
+        })
+      .state('school', { // Не отображается в меню
+        url: '/schools/:schoolId',
+        templateUrl: 'app/pages/schools/school.html',
+        title: 'Организации',
+        controller: 'SchoolCtrl',
+      })
+    ;
   }
 
 })();

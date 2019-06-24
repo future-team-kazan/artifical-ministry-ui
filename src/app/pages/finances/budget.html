@@ -1,0 +1,42 @@
+<div class="row">
+    <div class="col-md-6 col-sm-12">
+        <div ba-panel
+             ba-panel-title="Доходы"
+             ba-panel-class="panel">
+            <table class="table table-bordered">
+                <thead>
+                <tr>
+                    <th class="align-left">Статья</th>
+                    <th class="align-right">Сумма</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr ng-repeat="item in incomes">
+                    <td class="align-left">{{item.name}}</td>
+                    <td class="align-right">{{item.value}}</td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+    <div class="col-md-6 col-sm-12">
+        <div ba-panel
+             ba-panel-title="Расходы"
+             ba-panel-class="panel">
+            <table class="table table-bordered">
+                <thead>
+                <tr>
+                    <th class="align-left">Статья</th>
+                    <th class="align-right">Сумма</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr ng-repeat="item in expenses">
+                    <td class="align-left">{{item.name}}</td>
+                    <td class="align-right">{{item.value}}</td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>

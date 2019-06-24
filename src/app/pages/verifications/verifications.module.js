@@ -12,7 +12,7 @@
           templateUrl: 'app/pages/verifications/verifications.html',
           title: 'Проверки',
           sidebarMeta: {
-            icon: 'ion-android-home',
+            icon: 'ion-clipboard',
             order: 70,
           },
         });

@@ -1,1 +1,19 @@
 <p>Документы</p>
+<div class="col-lg-12">
+    <div ba-panel ba-panel-class="with-scroll">
+        <table class="table table-condensed">
+            <thead>
+            <tr>
+                <th>Документ</th>
+                <th>Статус</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr ng-repeat="item in documents">
+                <td>{{item.name}}</td>
+                <td><button class="btn btn-xs btn-{{item.statusColor}}">{{item.status}}</button></td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
