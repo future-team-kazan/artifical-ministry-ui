@@ -2,10 +2,10 @@
   'use strict';
 
   angular.module('BlurAdmin.pages.finances')
-    .controller('IncomeChartCtrl', IncomeChartCtrl);
+    .controller('ExpenseChartCtrl', ExpenseChartCtrl);
 
   /** @ngInject */
-  function IncomeChartCtrl($scope, baConfig, $element, layoutPaths) {
+  function ExpenseChartCtrl($scope, baConfig, $element, layoutPaths) {
     var layoutColors = baConfig.colors;
     var id = $element[0].getAttribute('id');
     var pieChart = AmCharts.makeChart(id, {
@@ -48,29 +48,34 @@
       },
       dataProvider: [
         {
-          country: 'Дополнительное обучение',
-          litres: 4.7
+          country: 'Коммунальные расходы',
+          litres: 13.5
+        },
+
+        {
+          country: 'Пополнение библиотечных фондов',
+          litres: 3.4
         },
         {
-          country: 'Коммерческая дейстельность',
-          litres: 1.3
+          country: 'Начисления на оплату труда',
+          litres: 12.5
         },
         {
-          country: 'Спонсорские средства',
-          litres: 4.7
+          country: 'Другое',
+          litres: 6.9
         },
         {
-          country: 'Гранты',
-          litres: 3.7
+          country: 'Учебное оборудование',
+          litres: 4.1
         },
         {
-          country: 'Другие доходы',
-          litres: 1.8
+          country: 'Повышение квалификации',
+          litres: 1.7
         },
         {
-          country: 'Бюджетные средства на реализацию основной образовательной программы',
-          litres: 83.8
-        }
+          country: 'Оплата труда',
+          litres: 58.1
+        },
       ],
       valueField: 'litres',
       titleField: 'country',
@@ -90,7 +95,31 @@
       pathToImages: layoutPaths.images.amChart,
       responsive: {
         enabled: true,
+        rules: [
+          // at 900px wide, we hide legend
+          {
+            maxWidth: 900,
+            overrides: {
+              legend: {
+                enabled: false
+              }
+            }
+          },
 
+          // at 200 px we hide value axis labels altogether
+          {
+            maxWidth: 200,
+            overrides: {
+              valueAxes: {
+                labelsEnabled: false
+              },
+              marginTop: 30,
+              marginBottom: 30,
+              marginLeft: 30,
+              marginRight: 30
+            }
+          }
+        ]
       }
     });
 

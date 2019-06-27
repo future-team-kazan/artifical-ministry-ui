@@ -1,97 +1,63 @@
-<dashboard-pie-chart></dashboard-pie-chart>
+<!--<dashboard-pie-chart></dashboard-pie-chart>-->
 
 <div class="row">
   <div class="col-lg-6 col-md-12">
-    <div ba-panel ba-panel-title="Текущее состояние проектов" ba-panel-class="with-scroll">
-      <div ng-include="'app/pages/ui/progressBars/widgets/label.html'"></div>
+    <div ba-panel ba-panel-title="Доходы подведомственных учреждений">
+      <div id="incomeChart" class="iminister-chart" ng-controller="IncomeChartCtrl"></div>
     </div>
   </div>
   <div class="col-lg-6 col-md-12">
-    <dashboard-inspection-results title="Результаты контрольно-надзорной деятельности"></dashboard-inspection-results>
+    <div ba-panel ba-panel-title="Расходы подведомственных учреждений">
+      <div id="expenseChart" class="iminister-chart" ng-controller="ExpenseChartCtrl"></div>
+    </div>
   </div>
 </div>
 
 <div class="row">
-  <div class="col-lg-6 col-md-12 col-sm-12"
-       ba-panel
-       ba-panel-title="Общие расходы"
-       ba-panel-class="medium-panel traffic-panel">
-    <traffic-chart></traffic-chart>
+  <div class="col-lg-6 col-md-12">
+    <div ba-panel ba-panel-title="Реализуемые проекты" >
+      <table class="table table-bordered">
+        <thead>
+        <tr>
+          <th class="hidden"></th>
+          <th class="align-left">Наименование</th>
+          <th class="align-right">Даты реализации</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr ng-repeat="item in projects">
+          <td class="hidden"></td>
+          <td class="align-left">{{item.name}}</td>
+          <td class="align-right">{{item.timeFrame}}</td>
+        </tr>
+        </tbody>
+      </table>
+    </div>
   </div>
-  <div class="col-lg-6 col-md-12 col-sm-12">
-    <dashboard-incident-table title="Инциденты"></dashboard-incident-table>
+  <div class="col-lg-6 col-md-12">
+      <div ng-include="'app/pages/edicts/edicts.html'"></div>
   </div>
 </div>
+
+
+<!--<div class="row">-->
+<!--  <div class="col-lg-6 col-md-12">-->
+<!--    <dashboard-inspection-results title="Результаты контрольно-надзорной деятельности"></dashboard-inspection-results>-->
+<!--  </div>-->
+<!--  <div class="col-lg-6 col-md-12 col-sm-12">-->
+<!--    <dashboard-incident-table title="Инциденты"></dashboard-incident-table>-->
+<!--  </div>-->
+<!--</div>-->
 
 <!--<div class="row">-->
 <!--  <div class="col-lg-6 col-md-12 col-sm-12"-->
 <!--       ba-panel-->
-<!--       ba-panel-title="Acquisition Channels"-->
+<!--       ba-panel-title="Общие расходы"-->
 <!--       ba-panel-class="medium-panel traffic-panel">-->
 <!--    <traffic-chart></traffic-chart>-->
 <!--  </div>-->
-<!--  <div class="col-lg-6 col-md-12 col-sm-12"-->
-<!--       ba-panel-->
-<!--       ba-panel-title="Users by Country"-->
-<!--       ba-panel-class="medium-panel">-->
-<!--    <dashboard-map></dashboard-map>-->
-<!--  </div>-->
 <!--</div>-->
 
-<div class="row">
-  <div class="col-lg-6 col-md-12">
-    <dashboard-incident-table title="Мероприятия"></dashboard-incident-table>
-  </div>
-  <div class="col-lg-6 col-md-12 col-sm-12"
-       ba-panel
-       ba-panel-title="Users by Country"
-       ba-panel-class="medium-panel">
-    <dashboard-map></dashboard-map>
-  </div>
-</div>
 
-<div class="row">
-  <div class="col-xlg-9 col-lg-6 col-md-6 col-sm-12 col-xs-12">
-    <div class="row">
-      <div class="col-xlg-8 col-lg-12 col-md-12 col-sm-7 col-xs-12"
-           ba-panel
-           ba-panel-title="Revenue"
-           ba-panel-class="medium-panel">
-        <dashboard-line-chart></dashboard-line-chart>
-      </div>
-      <div class="col-xlg-4 col-lg-12 col-md-12 col-sm-5 col-xs-12" ng-controller="chartJs2DCtrl">
-        <div ba-panel ba-panel-title="Кадровая обеспеченность" ba-panel-class="with-scroll ">
-          <div class="chartjs-canvas-holder-third-row">
-            <canvas id="line" class="chart chart-line" chart-data="data" chart-labels="labels"
-                    chart-series="series" chart-click="changeData"></canvas>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-  <div class="col-xlg-3 col-lg-6 col-md-6 col-sm-12 col-xs-12"
-       ba-panel
-       ba-panel-title="Последние актуальные указы"
-       ba-panel-class="large-panel with-scroll feed-panel">
-    <blur-feed></blur-feed>
-  </div>
-</div>
-
-<div class="row shift-up">
-  <div class="col-xlg-6 col-lg-6 col-md-6 col-xs-12" ng-controller="chartJs2DCtrl">
-    <div ba-panel ba-panel-title="Bars" ba-panel-class="with-scroll ">
-      <div class="chartjs-canvas-holder-third-row">
-        <canvas id="bar" class="chart chart-bar"
-                chart-data="data" chart-labels="labels" chart-series="series" chart-click="changeData" chart-update="updateC">
-        </canvas>
-      </div>
-    </div>
-  </div>
-  <div class="col-xlg-6 col-lg-6 col-md-6 col-xs-12"
-       ba-panel
-       ba-panel-title="Calendar"
-       ba-panel-class="xmedium-panel feed-comply-panel with-scroll calendar-panel">
-    <dashboard-calendar></dashboard-calendar>
-  </div>
 </div>
 
