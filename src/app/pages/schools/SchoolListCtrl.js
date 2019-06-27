@@ -7,10 +7,9 @@
   /** @ngInject */
   function SchoolListCtrl($scope, OrganizationsService) {
     OrganizationsService.getOrganizationsFromServer(function(dataResponse) {
-      $scope.dataFromDb = dataResponse;
+      $scope.schools = dataResponse;
       console.log($scope.dataFromDb);
     });
-    $scope.schools = OrganizationsService.getOrganizations();
   }
 
 })();

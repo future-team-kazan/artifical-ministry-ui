@@ -5,6 +5,14 @@
     <uib-tabset class="justified" active="$tabSetStatus.activeTab">
         <uib-tab heading="По отрасли">
             <div class="row">
+                    <div class="col-md-6">
+                        <div id="incomeChart" class="iminister-chart" ng-controller="IncomeChartCtrl"></div>
+                    </div>
+                    <div class="col-md-6">
+                        <div id="expenseChart" class="iminister-chart" ng-controller="IncomeChartCtrl"></div>
+                    </div>
+            </div>
+            <div class="row">
                 <!--                <div id="salaryChart"></div>-->
                 <div class="col-md-8">
                     <h2>Средняя заработная плата по должностям</h2>

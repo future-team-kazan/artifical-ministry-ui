@@ -16,7 +16,7 @@ angular.module('BlurAdmin', [
   'BlurAdmin.theme',
   'BlurAdmin.pages'
 ])
-  // .config(['$compileProvider', function ($compileProvider) {
-  //   $compileProvider.debugInfoEnabled(false);
-  // }])
+  .config(['$compileProvider', function ($compileProvider) {
+    $compileProvider.debugInfoEnabled(false);
+  }])
 ;

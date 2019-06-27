@@ -5,7 +5,7 @@
 (function () {
   'use strict';
 
-  angular.module('BlurAdmin.pages.schools', ['OrganizationsModule'])
+  angular.module('BlurAdmin.pages.schools', ['ServicesModule'])
       .config(routeConfig);
 
   /** @ngInject */

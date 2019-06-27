@@ -1,30 +1,59 @@
 (function () {
   'use strict';
 
-  angular.module('BlurAdmin.pages.finances')
+  angular.module('BlurAdmin.pages.schools')
     .controller('SalaryStatChartCtrl', SalaryStatChartCtrl);
 
   /** @ngInject */
-  function SalaryStatChartCtrl($scope, baConfig, $element, layoutPaths) {
+  function SalaryStatChartCtrl($scope, baConfig, $element, layoutPaths, ChartDataService) {
     var layoutColors = baConfig.colors;
     var id = $element[0].getAttribute('id');
+
+    ChartDataService.getDataFromServer(function(dataResponse) {
+        $scope.dataFromDb = dataResponse;
+      }
+    );
 
     var arrayINeed = {
       legend: [
         {
           name: 'Все',
-          field: 'all'
+          field: 'all',
+          color: layoutColors.warning
         },
         {
           name: 'Директор',
-          field: 'director'
+          field: 'director',
+          color: layoutColors.primary
         },
         {
-          name: 'Учительно',
-          field: 'teacher'
+          name: 'Учитель',
+          field: 'teacher',
+          color: layoutColors.danger
         }
       ],
       chartData: [
+        {
+          year: 2015,
+          all: 10000,
+          director: 20000,
+          teacher: 7000,
+          color: layoutColors.warning
+        },
+        {
+          year: 2016,
+          all: 9000,
+          director: 23000,
+          teacher: 7500,
+          color: layoutColors.primary
+        },
+        {
+          year: 2017,
+          all: 10000,
+          director: 24000,
+          teacher: 9500,
+          color: layoutColors.danger
+        },
         {
           year: 2018,
           all: 15000,
@@ -59,15 +88,16 @@
 
     var myGraphs = [];
 
-    legend.forEach(function (item, i) {
+    arrayINeed.legend.forEach(function (item, i) {
+      console.log(item);
       myGraphs.push({
         id: 'g' + i,
         balloonText: '<b>[[title]]: [[value]]</b>',
         bullet: 'round',
         bulletSize: 8,
-        lineColor: layoutColors.warning,
+        lineColor: item.color,
         lineThickness: 2,
-        negativeLineColor: layoutColors.warning,
+        negativeLineColor: item.color,
         type: 'smoothedLine',
         valueField: item.field,
         title: item.name
@@ -135,7 +165,7 @@
       type: 'serial',
       theme: 'blur',
       color: layoutColors.defaultText,
-      dataProvider: chartData,
+      dataProvider: arrayINeed.chartData,
       "legend": {
         "useGraphSettings": true
       },
@@ -149,44 +179,6 @@
         }
       ],
       graphs: myGraphs,
-      //   [
-      //   {
-      //     id: 'g1',
-      //     balloonText: '<b>[[title]]: [[value]]</b>',
-      //     bullet: 'round',
-      //     bulletSize: 8,
-      //     lineColor: layoutColors.warning,
-      //     lineThickness: 2,
-      //     negativeLineColor: layoutColors.warning,
-      //     type: 'smoothedLine',
-      //     valueField: 'all',
-      //     title: 'Все'
-      //   },
-      //   {
-      //     id: 'g2',
-      //     balloonText: '<b>[[title]]: [[value]]</b>',
-      //     bullet: 'round',
-      //     bulletSize: 8,
-      //     lineColor: layoutColors.primary,
-      //     lineThickness: 1,
-      //     negativeLineColor: layoutColors.primary,
-      //     type: 'smoothedLine',
-      //     valueField: 'director',
-      //     title: 'Директор'
-      //   },
-      //   {
-      //     id: 'g3',
-      //     balloonText: '<b>[[title]]: [[value]]</b>',
-      //     bullet: 'round',
-      //     bulletSize: 8,
-      //     lineColor: layoutColors.danger,
-      //     lineThickness: 1,
-      //     negativeLineColor: layoutColors.danger,
-      //     type: 'smoothedLine',
-      //     valueField: 'teacher',
-      //     title: 'Учитель'
-      //   }
-      // ],
       chartCursor: {
         "cursorPosition": "mouse"
       },
